@@ -23,6 +23,7 @@ class CreateBooksTable extends Migration
             $table->text("details");
             $table->string('book_img')->nullable();
             $table->decimal('price');
+            $table->integer('soldNum')->default(0);
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
         });
     }
