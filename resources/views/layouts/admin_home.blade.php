@@ -187,7 +187,7 @@
 										<div class="topbar-item">
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Sean</span>
+										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{Auth::User()->name}}</span>
 										<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
 											<span class="symbol-label font-size-h5 font-weight-bold">S</span>
 										</span>
@@ -211,12 +211,16 @@
 											<!--end::Item-->
 											<!--begin::Item-->
 											<li class="navi-item active">
-												<a href="#" class="navi-link">
-													<span class="symbol symbol-20 mr-3">
-														<img src="{{asset('admin_assets/media/svg/flags/128-spain.svg')}}" alt="" />
-													</span>
-													<span class="navi-text">Spanish</span>
+
+											<form method="POST" action="{{ route('logout') }}">
+														@csrf
+												<a href="route('logout')"
+                                                onclick="event.preventDefault();
+                                                this.closest('form').submit();" class="navi-link">
+												Logout
+									
 												</a>
+												</form>
 											</li>
 											<!--end::Item-->
 										</ul>

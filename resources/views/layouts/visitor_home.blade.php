@@ -28,6 +28,8 @@
    <link rel="stylesheet" href="{{asset('visitor_assets/css/font-awesome-pro.css')}}">
    <link rel="stylesheet" href="{{asset('visitor_assets/css/spacing.css')}}">
    <link rel="stylesheet" href="{{asset('visitor_assets/css/main.css')}}">
+
+   
 </head>
 
 <body>
@@ -117,145 +119,24 @@
                      <div class="bd-main-menu d-none d-lg-flex align-items-center">
                         <nav id="mobile-menu">
                            <ul>
-                              <li class="has-dropdown">
+                          
+                           <li>
                                  <a href="index.html">Home</a>
-                                 <ul class="submenu">
-                                    <li><a href="index.html">Home Style 1</a></li>
-                                    <li><a href="index-2.html">Home Style 2</a>
-                                    </li>
-                                    <li><a href="index-3.html">Home Style 3</a></li>
-                                 </ul>
-                              </li>
+                                 </li>
+                     
                               <li>
                                  <a href="about.html">About</a>
                               </li>
-                              <li class="has-dropdown has-mega-menu">
-                                 <a href="programs.html">Programs</a>
-                                 <ul class="mega-menu mega-menu-2">
-                                    <li>
-                                       <a href="javascript:void(0);" class="d-lg-none">List 1</a>
-                                       <ul>
-                                          <li> <a href="program-details.html" class="mega-program">
-                                                <div class="mega-menu-2-inner-num"><span>01</span></div>
-                                                <div class="mega-menu-2-inner-title">
-                                                   <h6>Settling</h6>
-                                                   <span>4-5 Yrs</span>
-                                                </div>
-                                             </a></li>
-                                          <li> <a href="program-details.html" class="mega-program">
-                                                <div class="mega-menu-2-inner-num"><span>02</span></div>
-                                                <div class="mega-menu-2-inner-title">
-                                                   <h6>Play Group</h6>
-                                                   <span>4-5 Yrs</span>
-                                                </div>
-                                             </a></li>
-                                          <li> <a href="program-details.html" class="mega-program">
-                                                <div class="mega-menu-2-inner-num"><span>03</span></div>
-                                                <div class="mega-menu-2-inner-title">
-                                                   <h6>Play Group</h6>
-                                                   <span>5-6 Yrs</span>
-                                                </div>
-                                             </a></li>
-                                       </ul>
-                                    </li>
-                                    <li>
-                                       <a href="javascript:void(0);" class="d-lg-none">List 2</a>
-                                       <ul>
-                                          <li> <a href="program-details.html" class="mega-program">
-                                                <div class="mega-menu-2-inner-num"><span>04</span></div>
-                                                <div class="mega-menu-2-inner-title">
-                                                   <h6>Nuesery</h6>
-                                                   <span>4-5 Yrs</span>
-                                                </div>
-                                             </a></li>
-                                          <li> <a href="program-details.html" class="mega-program">
-                                                <div class="mega-menu-2-inner-num"><span>05</span></div>
-                                                <div class="mega-menu-2-inner-title">
-                                                   <h6>Junior Kg</h6>
-                                                   <span>4-5 Yrs</span>
-                                                </div>
-                                             </a></li>
-                                          <li> <a href="program-details.html" class="mega-program">
-                                                <div class="mega-menu-2-inner-num"><span>06</span></div>
-                                                <div class="mega-menu-2-inner-title">
-                                                   <h6>Senior Kg</h6>
-                                                   <span>6-7 Yrs</span>
-                                                </div>
-                                             </a></li>
-                                       </ul>
-                                    </li>
-                                    <li class="test">
-                                       <a href="javascript:void(0);" class="d-lg-none">list 3</a>
-                                       <ul>
-                                          <li>
-                                             <div class="mega-menu-2-inner-thumb p-relative">
-                                                <img src="{{asset('visitor_assets/img/logo/mega-menu-1.png')}}" alt="img not found!">
-                                                <div class="mega-menu-2-inner-thumb-content">
-                                                   <h4>Join New Program</h4>
-                                                   <div class="mega-menu-2-inner-thumb-btn mb-25">
-                                                      <a href="programs.html" class="mega-btn">View More</a>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </li>
-                                       </ul>
-                                    </li>
-                                 </ul>
+                            
+                              <li >
+                                 <a href="shop.html">Shop Books</a>
+                               
                               </li>
-                              <li class="has-dropdown">
-                                 <a href="shop.html">Shop</a>
-                                 <ul class="submenu">
-                                    <li><a href="shop.html">Shop Main</a></li>
-                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                 </ul>
+                              @if(!Auth::User())
+                              <li >
+                                 <a href="{{route('register')}}">Register</a>
                               </li>
-                              <li class="has-dropdown has-mega-menu">
-                                 <a href="#">Pages</a>
-                                 <ul class="mega-menu">
-                                    <li><a href="javasript:void(0);" class="mega-menu-title">Page Layout 1</a>
-                                       <ul>
-                                          <li> <a href="programs.html">Program</a></li>
-                                          <li><a href="program-details.html">Program Details</a></li>
-                                          <li><a href="teacher.html">Teacher</a></li>
-                                          <li><a href="teacher-details.html">Teacher Details</a></li>
-                                          <li><a href="time-table.html">Time Table</a></li>
-                                       </ul>
-                                    </li>
-                                    <li><a href="javasript:void(0);" class="mega-menu-title">Page Layout 2</a>
-                                       <ul>
-                                          <li><a href="testimonial.html">Testimonial</a></li>
-                                          <li><a href="gallery.html">Gallery</a></li>
-                                          <li><a href="faq.html">FAQ</a></li>
-                                          <li><a href="classes.html">Class</a></li>
-                                          <li><a href="class-details.html">Class Details</a></li>
-                                       </ul>
-                                    </li>
-                                    <li><a href="javasript:void(0);" class="mega-menu-title">Page Layout 3</a>
-                                       <ul>
-                                          <li><a href="news.html">News Main</a></li>
-                                          <li><a href="news-sidebar.html">News Sidebar</a></li>
-                                          <li><a href="error-404.html">Error Page</a></li>
-                                          <li><a href="news-classic.html">News Classic</a></li>
-                                          <li><a href="news-details.html">News Details</a></li>
-                                       </ul>
-                                    </li>
-                                 </ul>
-                              </li>
-                              <li class="has-dropdown">
-                                 <a href="news.html">News</a>
-                                 <ul class="submenu">
-                                    <li><a href="news.html">News Default</a></li>
-                                    <li><a href="news-sidebar.html">News Sidebar</a></li>
-                                    <li><a href="news-classic.html">News Classic</a></li>
-                                    <li><a href="news-details.html">News Details</a></li>
-                                 </ul>
-                              </li>
-                              <li>
-                                 <a href="contact.html">Contact</a>
-                              </li>
+                              @endif
                            </ul>
                         </nav>
                         <div class="bd-search-btn-wrapper">
@@ -274,12 +155,29 @@
                            </div>
                         </div>
                         <div class="bd-header-btn d-none d-xl-block">
-                           <a href="contact.html" class="bd-btn">
+                           @if(Auth::User())
+                              <form method="POST" action="{{ route('logout') }}">
+														@csrf
+
+                              <a href="route('logout')"
+                               onclick="event.preventDefault();
+                              this.closest('form').submit();" class="bd-btn">
+
                               <span class="bd-btn-inner">
-                                 <span class="bd-btn-normal">Apply now</span>
-                                 <span class="bd-btn-hover">Apply now</span>
+                                 <span class="bd-btn-normal">Logout</span>
+                                 <span class="bd-btn-hover">Logout</span>
                               </span>
                            </a>
+                           </form>
+                            @else
+                              <a href="{{route('login')}}" class="bd-btn">
+                              <span class="bd-btn-inner">
+                                 <span class="bd-btn-normal">Login</span>
+                                 <span class="bd-btn-hover">Login</span>
+                              </span>
+                           </a>
+                           
+                        @endif
                         </div>
                         <div class="header-hamburger">
                            <button type="button" class="hamburger-btn offcanvas-open-btn">
@@ -299,8 +197,15 @@
    </header>
    <!-- header area end here -->
 
-   
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <div style="padding: 20;">
    @yield('content')
+   </div>
 
 
 

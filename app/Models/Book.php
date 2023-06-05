@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class Book extends Model
 {
     protected $fillable = [
-        'title', 'author', 'year', 'book', 'details', 'book_img', 'price', 'category_id'
+        'title', 'author', 'year', 'book', 'details', 'book_img', 'price', 'category_id', 'soldNum'
     ];
 
     public function category()
@@ -42,9 +42,10 @@ public function getImageUrlAttribute()
 
 
 
-    public function soldBooks()
+    public function users()
     {
-        return $this->hasMany(SoldBook::class);
+        return $this->belongsToMany(
+            User::class,'soldbooks','book_id','user_id');
     }
 }
 
