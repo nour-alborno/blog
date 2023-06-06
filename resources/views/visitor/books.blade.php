@@ -32,7 +32,7 @@
                             <div class="bd-program-thumb-wrapper">
                                 <a href="{{ route('book_details.show', $book->id) }}">
                                     <div class="bd-program-thumb">
-                                        <img src="{{ asset('storage/app/public/' . $book->book_img) }}" alt="Image not found">
+                                        <img src="{{ asset('storage/' . $book->book_img) }}" alt="Image not found">
                                     </div>
                                 </a>
                                 <div class="bd-program-shape">

@@ -40,7 +40,7 @@
             <div>
                 <strong>Book Image:</strong>
                 @if($book->book_img)
-                    <img src="{{ asset('storage/app/public/' . $book->book_img) }}" alt="Book Image" class="img-fluid">
+                    <img src="{{ asset('storage/' . $book->book_img) }}" alt="Book Image" class="img-fluid">
                 @else
                     <p>No image available</p>
                 @endif
@@ -62,7 +62,7 @@
                      <input type="hidden" name="book_id" value="{{ $book->id }}">
                      
         
-                    <a type="submit" href="{{asset('storage/app/public/' . $book->book) }}" target="_blank">Buy</a>
+                    <a type="submit" href="{{asset('storage/' . $book->book) }}" target="_blank">Buy</a>
                 
                 </form>
                     @else
