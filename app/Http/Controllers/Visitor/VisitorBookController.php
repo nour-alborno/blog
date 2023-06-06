@@ -62,9 +62,18 @@ class VisitorBookController extends Controller
         // Update the user's money
         $user->money -= $price;
         $user->save();
-        $pb =SoldBook::Where('user_id',$user->id)->where('book_id',$request->input('book_id'))->first();
-        $pb->save();
 
+        $pb =SoldBook::Where('user_id',$user->id)->where('book_id',$request->input('book_id'))->first();
+        if($pb){
+            $pb->save();
+
+        }else{
+            $new = new SoldBook();
+            $new->user_id = $user->id;
+            $new->book_id = $request->input('book_id');
+            $new->save();
+        }
+       
         $book->increment('soldNum');
 
 

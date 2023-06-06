@@ -26,8 +26,8 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('layout/visitor_home', function(){
-    return view('layouts.visitor_home');
+Route::get('visitor/index', function(){
+    return view('visitor.index');
 });
 
 Route::prefix('admin')->group(function () {
