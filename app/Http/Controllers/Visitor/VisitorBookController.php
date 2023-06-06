@@ -68,10 +68,7 @@ class VisitorBookController extends Controller
         $book->increment('soldNum');
 
 
-        return redirect()->back()->with([
-            'message_flash' => 'تم الشراء',
-            'alter' => 'success'
-           ]);
+        return redirect()->back()->with('success', 'Book deleted successfully.');
         
     }
 
