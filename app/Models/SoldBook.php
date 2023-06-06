@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SoldBook extends Model
 {
+    protected $table ='soldbooks';
     protected $fillable = [
         'book_id', 'user_id'
     ];

@@ -62,15 +62,15 @@
                      <input type="hidden" name="book_id" value="{{ $book->id }}">
                      
         
-                    <a type="submit" href="{{asset('storage/' . $book->book) }}" target="_blank">Buy</a>
+                    <a type="submit" href="{{asset('storage/app/public/' . $book->book) }}" target="_blank">Buy</a>
                 
                 </form>
                     @else
-                    <p>No book file available</p>
-                @endif
+                    <p>You must login to be able to buy</p>
+                    @endif
                 @else
-                <p>You must login to be able to buy</p>
-                @endif
+                <a src="{{ asset('storage/' . $book->book) }}" alt="Book Image" class="img-fluid"></a>
+                @endif    
             </div>
             <a href="{{ route('home') }}" class="btn btn-secondary mt-3">Back</a>
         </div>
