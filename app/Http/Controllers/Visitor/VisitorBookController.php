@@ -39,11 +39,12 @@ class VisitorBookController extends Controller
   
     
        public function store(Request $request){
-        $user = Auth::user();
+        $user_id = Auth::id();
+        $user = User::findOrFail($user_id);
+
         $book = Book::find($request->input('book_id'));
 
      
-
         $price = $book->price;
  
         // Check if the user has enough money
@@ -58,20 +59,15 @@ class VisitorBookController extends Controller
       
        
         // Update the user's money
-        $user->money -= $price;
+        $user->money = $finalPrice;                        ;
         $user->save();
 
-        $pb =SoldBook::Where('user_id',$user->id)->where('book_id',$request->input('book_id'))->first();
-        if($pb){
-            $pb->save();
-
-        }else{
+       
             $new = new SoldBook();
             $new->user_id = $user->id;
             $new->book_id = $request->input('book_id');
             $new->save();
-        }
-       
+        
         $book->increment('soldNum');
 
 
