@@ -18,8 +18,6 @@ class CreateSoldbooksTable extends Migration
             $table->timestamps();
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->integer("sold")->nullable();
-
             $table->primary(['user_id', 'book_id']);  
 
         });

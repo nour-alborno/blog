@@ -25,6 +25,12 @@ class User extends Authenticatable
         'mobile',
     ];
 
+
+    public function books()
+    {
+        return $this->belongsToMany(
+            Book::class,'soldbooks','user_id','book_id');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
