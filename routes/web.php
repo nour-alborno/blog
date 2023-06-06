@@ -26,9 +26,9 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('layout/visitor_home', function(){
-    return view('layouts.visitor_home');
-});
+// Route::get('visitor/index', function(){
+//     return view('visitor.index');
+// });
 
 Route::prefix('admin')->group(function () {
     Route::get('books', [BookController::class, 'index'])->name('admin.books.index');
@@ -58,5 +58,5 @@ Route::get('/book', [VisitorBookController::class, 'getAllBooks'])->name('books'
 
 Route::get('/{book}', [VisitorBookController::class, 'details'])->name('book_details.show');
 
-Route::post('/{book}/store', [VisitorBookController::class, 'store'])->name('book.purchased.store');
+Route::post('/book/store', [VisitorBookController::class, 'store'])->name('book.purchased.store');
 

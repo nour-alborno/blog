@@ -39,17 +39,18 @@ class VisitorBookController extends Controller
   
     
        public function store(Request $request){
-        $user = Auth::user();
+        $user_id = Auth::id();
+        $user = User::findOrFail($user_id);
+
         $book = Book::find($request->input('book_id'));
 
      
-
         $price = $book->price;
  
         // Check if the user has enough money
         if ($user->money < $price) {
             return redirect()->back()->with([
-                'message_flash' => 'الميزانية لا تسمح',
+                'message_flash' => 'You dont have enough money',
                 'alter' => 'error'
                ]);
         }
@@ -57,19 +58,21 @@ class VisitorBookController extends Controller
         $finalPrice = $user->money - $price;
       
        
-
-
         // Update the user's money
-        $user->money -= $price;
+        $user->money = $finalPrice;                        ;
         $user->save();
-        $pb =SoldBook::Where('user_id',$user->id)->where('book_id',$request->input('book_id'))->first();
-        $pb->save();
 
+       
+            $new = new SoldBook();
+            $new->user_id = $user->id;
+            $new->book_id = $request->input('book_id');
+            $new->save();
+        
         $book->increment('soldNum');
 
 
         return redirect()->back()->with([
-            'message_flash' => 'تم الشراء',
+            'message_flash' => 'You have purchased the book',
             'alter' => 'success'
            ]);
         
