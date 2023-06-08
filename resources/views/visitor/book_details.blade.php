@@ -30,6 +30,7 @@
             <p><strong>Price:</strong> {{ $book->price }}</p>
             <div>
                 <strong>Book File:</strong>
+
                 @if(!App\Models\SoldBook::where('user_id', Auth::id())->where('book_id',$book->id)->first())
                     @if(Auth::User())
                     <form action="{{route('book.purchased.store')}}" method="post" enctype="multipart/form-data" >
@@ -40,6 +41,7 @@
             
                         <button type="submit" class="btn btn-primary" href="{{ asset('storage/' . $book->book) }}" target="_blank">Buy</button>
                             
+
                     @else
                     <p>You must login to be able to buy</p>
                     @endif

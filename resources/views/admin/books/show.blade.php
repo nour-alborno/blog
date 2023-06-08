@@ -1,4 +1,4 @@
-@extends('layouts.admin_home')
+@extends('layouts.visitor_home')
 @section('title', 'Books')
 @section('content')
 <br>
@@ -8,7 +8,7 @@
             <div>
                 <strong>Book Image:</strong>
                 @if($book->book_img)
-                    <img src="{{ asset('storage/app/public/' . $book->book_img) }}" alt="Book Image" class="img-fluid">
+                    <img src="{{ asset('storage/' . $book->book_img) }}" alt="Book Image" class="img-fluid">
                 @else
                     <p>No image available</p>
                 @endif
@@ -23,12 +23,12 @@
             <div>
                 <strong>Book File:</strong>
                 @if($book->book)
-                    <a href="{{ asset('storage/app/public/' . $book->book) }}" target="_blank">Download</a>
+                    <a href="{{ asset('storage/' . $book->book) }}" target="_blank">Download</a>
                 @else
                     <p>No book file available</p>
                 @endif
             </div>
-            <a href="{{ route('books.index') }}" class="btn btn-secondary mt-3">Back</a>
+            <a href="{{ route('admin.books.index') }}" class="btn btn-secondary mt-3">Back</a>
         </div>
     </div>
 @endsection

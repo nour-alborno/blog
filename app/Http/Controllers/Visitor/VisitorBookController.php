@@ -26,7 +26,7 @@ class VisitorBookController extends Controller
 
     public function getAllBooks()
     {
-        $books = Book::simplePaginate(1);
+        $books = Book::simplePaginate(3);
         return view('visitor.books', compact('books'));
     }
 
@@ -72,24 +72,22 @@ class VisitorBookController extends Controller
 
         return redirect()->back()->with('success', 'Book bought successfully.');
     
-        
     }
-
 
     public function search(Request $request){
 
         if($request->search){
-            $searchBook=Book::where('title','LIKE','%'.$request->search.'%')->latest()->paginate(5);
-            return  view('visitor.search', [
-                'books' => $searchBook,
-            ]);
-            
-        } else{
-  
-            return redirect()->back();
-           
-        }
 
+            $searchBook =Book::where('title','LIKE','%'.$request->search.'%')->latest()->paginate(3); 
+            
+            return view('visitor.search',[
+                'books' =>$searchBook,
+               
+            ]);
+       
+        }else{
+            redirect()->back()->with('success', 'No Result.');
+        }
     }
 
 

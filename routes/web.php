@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BookController;
 use App\Http\Controllers\Visitor\VisitorBookController;
+use App\Http\Controllers\Admin\UserController;
 
 
 /*
@@ -36,26 +37,19 @@ Route::get('/about_us', function () {
     return view('visitor.about');
 })->name('about');
 
-/*Route::middleware('auth')->prefix('admin')->group(function () {
-    Route::get('books', [BookController::class, 'index'])->name('admin.books.index');
-    Route::get('books/create', [BookController::class, 'create'])->name('admin.books.create');
-    Route::post('books', [BookController::class, 'store'])->name('admin.books.store');
-    Route::get('books/{book}', [BookController::class, 'show'])->name('admin.books.show');
-    Route::get('books/{book}/edit', [BookController::class, 'edit'])->name('admin.books.edit');
-    Route::patch('books/{book}', [BookController::class, 'update'])->name('admin.books.update');
-    Route::delete('books/{book}', [BookController::class, 'destroy'])->name('admin.books.destroy');
-    Route::get('books/{book}/delete', [BookController::class, 'delete'])->name('admin.books.delete');
-    Route::post('books/sell', [BookController::class, 'sellBook'])->name('admin.books.sell');
-});*/
+
+Route::middleware(['auth', 'my.admin'])->get('admin/books', [BookController::class, 'index'])->name('admin.books.index');
+Route::middleware(['auth', 'my.admin'])->get('admin/books-table', [BookController::class, 'index_table'])->name('admin.books.index.table');
+
+Route::middleware(['auth', 'my.admin'])->get('admin/books/create', [BookController::class, 'create'])->name('admin.books.create');
+Route::middleware(['auth', 'my.admin'])->post('admin/books', [BookController::class, 'store'])->name('admin.books.store');
+Route::middleware(['auth', 'my.admin'])->get('admin/books/{book}', [BookController::class, 'show'])->name('admin.books.show');
+Route::middleware(['auth', 'my.admin'])->get('admin/books/{book}/edit', [BookController::class, 'edit'])->name('admin.books.edit');
+Route::middleware(['auth', 'my.admin'])->put('admin/books/{book}', [BookController::class, 'update'])->name('admin.books.update');
+Route::middleware(['auth', 'my.admin'])->delete('admin/books/{book}', [BookController::class, 'destroy'])->name('admin.books.destroy');
+Route::middleware(['auth', 'my.admin'])->get('admin/user-purchases', [UserController::class, 'showUserPurchases'])->name('admin.user.purchases');
 
 
-/*Route::middleware(['my.admin'])->get('/books', [BookController::class, 'index'])->name('books.index');
-Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
-Route::post('/books', [BookController::class, 'store'])->name('books.store');
-Route::get('/books/{book}', [BookController::class, 'show'])->name('books.show');
-Route::get('/books/{book}/edit', [BookController::class, 'edit'])->name('books.edit');
-Route::put('/books/{book}', [BookController::class, 'update'])->name('books.update');
-Route::delete('/books/{book}', [BookController::class, 'destroy'])->name('books.destroy');*/
 
 //visitor Routs
 Route::get('/', [VisitorBookController::class, 'index'])->name('home');
