@@ -50,10 +50,8 @@ class VisitorBookController extends Controller
  
         // Check if the user has enough money
         if ($user->money < $price) {
-                return redirect()->back()->with([
-                'message_flash' => 'Out of your budget',
-                'alter' => 'fail'
-            ]);
+                return redirect()->back()->with('fail', 'Out of your budget');
+            
         }
 
         $finalPrice = $user->money - $price;
@@ -72,10 +70,8 @@ class VisitorBookController extends Controller
         $book->increment('soldNum');
 
 
-        return redirect()->back()->with([
-            'message_flash' => 'Bought successfully',
-            'alter' => 'success'
-        ]);
+        return redirect()->back()->with('success', 'Book bought successfully.');
+    
         
     }
 

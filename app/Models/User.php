@@ -49,4 +49,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function getRedirectRoute(){
+        
+        if($this->type == '1')
+            return route('books');
+       else
+            return '/';
+    }
 }

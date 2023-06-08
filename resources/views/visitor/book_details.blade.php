@@ -1,11 +1,15 @@
 @extends('layouts.visitor_home')
 @section('title', 'Book Details')
 @section('content')
-<br>
-<br> 
-                      
 
-					
+                      				
+@if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+@endif
+
+@if(session('fail'))    
+<div class="alert alert-danger">{{ session('fail') }}</div>    
+    @endif
 
     <div class="row">
         <div class="col-md-6">
@@ -34,7 +38,7 @@
                         <input type="hidden" name="book_id" value="{{ $book->id }}">
                         
             
-                        <button type="submit" href="{{ asset('storage/' . $book->book) }}" target="_blank">Buy</button>
+                        <button type="submit" class="btn btn-primary" href="{{ asset('storage/' . $book->book) }}" target="_blank">Buy</button>
                             
                     @else
                     <p>You must login to be able to buy</p>
