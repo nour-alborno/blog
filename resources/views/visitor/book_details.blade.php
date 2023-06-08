@@ -34,13 +34,13 @@
                         <input type="hidden" name="book_id" value="{{ $book->id }}">
                         
             
-                        <button type="submit">Buy</a>
+                        <button type="submit" href="{{ asset('storage/' . $book->book) }}" target="_blank">Buy</button>
                             
                     @else
                     <p>You must login to be able to buy</p>
                     @endif
                 @else
-                <a src="{{ asset('storage/' . $book->book) }}" alt="Book Image" class="img-fluid"></a>
+                <a href="{{ asset('storage/' . $book->book) }}" alt="Pdf Book" class="img-fluid">The Book PDF</a>
                 @endif    
             </div>
             <a href="{{ route('home') }}" class="btn btn-secondary mt-3">Back</a>
