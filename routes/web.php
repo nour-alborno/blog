@@ -60,3 +60,5 @@ Route::get('/{book}', [VisitorBookController::class, 'details'])->name('book_det
 
 Route::post('/book/store', [VisitorBookController::class, 'store'])->name('book.purchased.store');
 
+Route::get('search', [VisitorBookController::class, 'search'])->name('book_search');
+

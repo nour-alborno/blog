@@ -537,9 +537,9 @@
             <div class="col-12">
                <div class="bd-search-popup">
                   <div class="bd-search-form">
-                     <form action="#">
+                     <form action="{{route('book_search')}}" method="GET">
                         <div class="bd-search-input">
-                           <input type="search" placeholder="Type here to serach ...">
+                           <input type="search" name="search" value="" placeholder="Type here to serach ...">
                            <div class="bd-search-submit">
                               <button type="submit"><i class="flaticon-search"></i></button>
                            </div>

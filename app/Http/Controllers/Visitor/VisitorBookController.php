@@ -19,7 +19,8 @@ class VisitorBookController extends Controller
         $booksPurchesed = Book::orderBy('soldNum', 'DESC')->take(3)->get();
 
         return view('visitor.index', [
-            'books' =>$booksNewest
+            'books' =>$booksNewest,
+            'mostBought' => $booksPurchesed,
         ]);
     }
 
@@ -76,6 +77,23 @@ class VisitorBookController extends Controller
             'alter' => 'success'
            ]);
         
+    }
+
+
+    public function search(Request $request){
+
+        if($request->search){
+            $searchBook=Book::where('title','LIKE','%'.$request->search.'%')->latest()->paginate(5);
+            return  view('visitor.search', [
+                'book' => $searchBook,
+            ]);
+            
+        } else{
+  
+            return redirect()->back();
+           
+        }
+
     }
 
 
