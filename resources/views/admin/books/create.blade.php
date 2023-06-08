@@ -3,7 +3,7 @@
 @section('content')
     <h1>Add Book</h1>
 
-    <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.books.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label>Title:</label>
@@ -43,6 +43,6 @@
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Add</button>
-        <a href="{{ route('books.index') }}" class="btn btn-secondary">Cancel</a>
+        <a href="{{ route('admin.books.index') }}" class="btn btn-secondary">Cancel</a>
     </form>
 @endsection

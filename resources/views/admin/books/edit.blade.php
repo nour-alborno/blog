@@ -3,7 +3,7 @@
 @section('content')
     <h1>Edit Book</h1>
 
-    <form action="{{ route('books.update', $book->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.books.update', $book->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -44,7 +44,7 @@
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
-        <a href="{{ route('books.index') }}" class="btn btn-secondary">Cancel</a>
+        <a href="{{ route('admin.books.index') }}" class="btn btn-secondary">Cancel</a>
     </form>
 @endsection
 

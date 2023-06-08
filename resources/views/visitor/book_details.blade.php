@@ -62,7 +62,7 @@
                      <input type="hidden" name="book_id" value="{{ $book->id }}">
                      
         
-                    <a type="submit" href="{{asset('storage/app/public/' . $book->book) }}" target="_blank">Buy</a>
+                    <a type="submit" href="{{asset('storage/' . $book->book) }}" target="_blank">Buy</a>
                 
                 </form>
                     @else

@@ -28,7 +28,7 @@
                     <p>No book file available</p>
                 @endif
             </div>
-            <a href="{{ route('books.index') }}" class="btn btn-secondary mt-3">Back</a>
+            <a href="{{ route('admin.books.index') }}" class="btn btn-secondary mt-3">Back</a>
         </div>
     </div>
 @endsection
