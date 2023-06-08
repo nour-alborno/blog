@@ -17,21 +17,25 @@ use App\Http\Controllers\Admin\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/dashboard', function () {
+
+/*Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');*/
 
 require __DIR__.'/auth.php';
 
-// Route::get('visitor/index', function(){
-//     return view('visitor.index');
-// });
+Route::get('/contact', function () {
+    return view('visitor.contact');
+})->name('contact');
 
 
+
+
+
+Route::get('/about_us', function () {
+    return view('visitor.about');
+})->name('about');
 
 
 Route::get('admin/books', [BookController::class, 'index'])->name('admin.books.index');
@@ -45,13 +49,14 @@ Route::get('admin/user-purchases', [UserController::class, 'showUserPurchases'])
 
 
 
-
 //visitor Routs
 Route::get('/', [VisitorBookController::class, 'index'])->name('home');
-
+Route::get('/search', [VisitorBookController::class, 'search'])->name('book.search');
 Route::get('/book', [VisitorBookController::class, 'getAllBooks'])->name('books');
 
 Route::get('/{book}', [VisitorBookController::class, 'details'])->name('book_details.show');
 
 Route::post('/book/store', [VisitorBookController::class, 'store'])->name('book.purchased.store');
+
+
 

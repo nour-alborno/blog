@@ -18,7 +18,7 @@
 
 @section('content')
 
-<div>Newest Books</div>
+<div><h3>New Arrivals</h3></div>
 
 @if($books->isEmpty())
     <div class="alert alert-info">No books found.</div>
@@ -74,22 +74,21 @@
 
       @endif
 
-    <div>Most Sold Books</div>
-
-@if($books->isEmpty())
+      <div><h3>Most Sold Books</h3></div>
+    @if($mostBought->isEmpty())
     <div class="alert alert-info">No books found.</div>
 @else
     <div class="row">
-        @foreach($books as $book)
+        @foreach($mostBought as $bookk)
             <div class="col-md-4">
                 <!-- program area start here  -->
                 <section class="bd-program-area pt-120 pb-80">
                     <div class="container">
                         <div class="bd-program clr-1 mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
                             <div class="bd-program-thumb-wrapper">
-                                <a href="{{ route('book_details.show', $book->id) }}">
+                                <a href="{{ route('book_details.show', $bookk->id) }}">
                                     <div class="bd-program-thumb">
-                                        <img src="{{ asset('storage/' . $book->book_img) }}" alt="Image not found">
+                                        <img src="{{ asset('storage/app/public/' . $book->book_img) }}" alt="Image not found">
                                     </div>
                                 </a>
                                 <div class="bd-program-shape">
@@ -104,18 +103,18 @@
                                 
                             </div>
                             <div class="bd-program-content mb-40">
-                                <h3 class="bd-program-title"><a class="hover-clr-1" href="{{ route('admin.books.show', $book->id) }}">{{ $book->title }}</a></h3>
+                                <h3 class="bd-program-title"><a class="hover-clr-1" href="{{ route('books.show', $book->id) }}">{{ $book->title }}</a></h3>
                                 <p>{{ Str::limit($book->details, 30) }}</p>
                             </div>
                             <div class="bd-program-info-wrapper theme-bg">
                                 <div class="bd-program-info">
-                                    <h5 class="bd-program-info-title">{{ $book->author }} <br><span>Author</span></h5>
+                                    <h5 class="bd-program-info-title">{{ $bookk->author }} <br><span>Author</span></h5>
                                 </div>
                                 <div class="bd-program-info">
-                                    <h5 class="bd-program-info-title">{{ $book->year }}  <br><span>Publication year</span></h5>
+                                    <h5 class="bd-program-info-title">{{ $bookk->year }}  <br><span>Publication year</span></h5>
                                 </div>
                                 <div class="bd-program-info">
-                                    <h5 class="bd-program-info-title">{{ $book->price }}<br><span>Price -$</span></h5>
+                                    <h5 class="bd-program-info-title">{{ $bookk->price }}<br><span>Price -$</span></h5>
                                 </div>
                             </div>
                         </div>
@@ -127,8 +126,9 @@
             </div>
         @endforeach
     </div>
-   
-@endif
+
+      @endif
+
 
 
    <!-- JS here -->

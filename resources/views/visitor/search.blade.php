@@ -1,5 +1,5 @@
 @extends('layouts.visitor_home')
-@section('title', 'Books')
+@section('title', 'Search Result')
  <!-- CSS here -->
  <link rel="stylesheet" href="assets/css/bootstrap.css">
    <link rel="stylesheet" href="assets/css/meanmenu.css">
@@ -18,7 +18,7 @@
 
 @section('content')
 
-<div style="display: flex; justify-content: center; align-items: center; "><h2 >Library</h2></div>
+
 @if($books->isEmpty())
     <div class="alert alert-info">No books found.</div>
 @else
@@ -98,6 +98,9 @@
 
 
 @endsection
+
+
+
 
 
 
