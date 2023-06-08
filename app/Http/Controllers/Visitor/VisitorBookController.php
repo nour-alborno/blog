@@ -26,7 +26,7 @@ class VisitorBookController extends Controller
 
     public function getAllBooks()
     {
-        $books = Book::simplePaginate(10);
+        $books = Book::simplePaginate(1);
         return view('visitor.books', compact('books'));
     }
 
@@ -50,17 +50,14 @@ class VisitorBookController extends Controller
  
         // Check if the user has enough money
         if ($user->money < $price) {
-            return redirect()->back()->with([
-                'message_flash' => 'You dont have enough money',
-                'alter' => 'error'
-               ]);
+            return redirect('/');
         }
 
         $finalPrice = $user->money - $price;
       
        
         // Update the user's money
-        $user->money = $finalPrice;                        ;
+        $user->money = $finalPrice;                      
         $user->save();
 
        
@@ -72,10 +69,7 @@ class VisitorBookController extends Controller
         $book->increment('soldNum');
 
 
-        return redirect()->back()->with([
-            'message_flash' => 'You have purchased the book',
-            'alter' => 'success'
-           ]);
+        return redirect()->back();
         
     }
 
@@ -85,7 +79,7 @@ class VisitorBookController extends Controller
         if($request->search){
             $searchBook=Book::where('title','LIKE','%'.$request->search.'%')->latest()->paginate(5);
             return  view('visitor.search', [
-                'book' => $searchBook,
+                'books' => $searchBook,
             ]);
             
         } else{

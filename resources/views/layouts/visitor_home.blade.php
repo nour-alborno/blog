@@ -11,6 +11,10 @@
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+   <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">"
+
    <!-- Place favicon.ico in the root directory -->
    <link rel="shortcut icon" type="image/x-icon" href="{{asset('visitor_assets/img/logo/favicon.png')}}">
 
@@ -33,7 +37,6 @@
 </head>
 
 <body>
-
    <!-- pre loader area start -->
    <div id="loading">
       <div id="preloader">
@@ -121,17 +124,30 @@
                            <ul>
                           
                            <li>
-                                 <a href="index.html">Home</a>
+                                 <a href="{{route('home')}}">Home</a>
                                  </li>
+
+                                 <li >
+                                 <a href="{{route('books')}}">Shop Books</a>
+                               
+                              </li>   
                      
                               <li>
-                                 <a href="about.html">About</a>
+                                 <a href="{{route('contact')}}">Contact us</a>
+                              </li>
+
+                              <li>
+                                 <a href="{{route('about')}}">About us</a>
                               </li>
                             
+                              @if(Auth::User() && Auth::User()->id == 1)
                               <li >
-                                 <a href="shop.html">Shop Books</a>
-                               
+                                 <a href="{{route('admin.books.index')}}">Admin Panel</a>
                               </li>
+                              @endif
+
+
+
                               @if(!Auth::User())
                               <li >
                                  <a href="{{route('register')}}">Register</a>
@@ -146,14 +162,7 @@
                         </div>
                      </div>
                      <div class="bd-header-bottom-right d-flex justify-content-end align-items-center">
-                        <div class="bd-header-meta-item d-none bd-header-menu-meta d-xxl-flex align-items-center">
-                           <div class="bd-header-meta-icon">
-                              <i class="flaticon-phone-call"></i>
-                           </div>
-                           <div class="bd-header-meta-text">
-                              <p><a href="tel:9072003462">907-200-3462</a></p>
-                           </div>
-                        </div>
+                      
                         <div class="bd-header-btn d-none d-xl-block">
                            @if(Auth::User())
                               <form method="POST" action="{{ route('logout') }}">
@@ -179,14 +188,7 @@
                            
                         @endif
                         </div>
-                        <div class="header-hamburger">
-                           <button type="button" class="hamburger-btn offcanvas-open-btn">
-                              <span></span>
-                              <span></span>
-                              <span></span>
-                              <span></span>
-                           </button>
-                        </div>
+                       
                      </div>
                   </div>
                </div>
@@ -201,9 +203,8 @@
    <br>
    <br>
    <br>
-   <br>
-   <br>
-   <div style="padding: 20;">
+   
+   <div style="padding: 20; margin: 50px;">
    @yield('content')
    </div>
 
@@ -537,7 +538,7 @@
             <div class="col-12">
                <div class="bd-search-popup">
                   <div class="bd-search-form">
-                     <form action="{{route('book_search')}}" method="GET">
+                     <form action="{{ route('book.search') }}" method="GET">
                         <div class="bd-search-input">
                            <input type="search" name="search" value="" placeholder="Type here to serach ...">
                            <div class="bd-search-submit">
