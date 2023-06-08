@@ -1,21 +1,26 @@
-@extends('layouts.admin_home')
-@section('title', 'user_purchases')
+@extends('layouts.visitor_home')
+
+@section('title', 'User Purchases')
+
 @section('content')
-<h1>hiiiiiiiiiiiiiii</h1>
-<table>
-    <thead>
-        <tr>
-            <th>User Name</th>
-            <th>Book Title</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($userPurchases as $purchase)
-            <tr>
-                <td>{{ $purchase->name }}</td>
-                <td>{{ $purchase->title }}</td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
+    <div class="container">
+        <h3>User Purchases</h3>
+<br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="table-primary">User Name</th>
+                    <th class="table-primary">Book Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($userPurchases as $purchase)
+                    <tr>
+                        <td>{{ $purchase->name }}</td>
+                        <td>{{ $purchase->title }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 @endsection

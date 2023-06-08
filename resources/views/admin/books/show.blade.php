@@ -1,4 +1,4 @@
-@extends('layouts.admin_home')
+@extends('layouts.visitor_home')
 @section('title', 'Books')
 @section('content')
 <br>

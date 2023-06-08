@@ -39,6 +39,8 @@ Route::get('/about_us', function () {
 
 
 Route::get('admin/books', [BookController::class, 'index'])->name('admin.books.index');
+Route::get('admin/books-table', [BookController::class, 'index_table'])->name('admin.books.index.table');
+
 Route::get('admin/books/create', [BookController::class, 'create'])->name('admin.books.create');
 Route::post('admin/books', [BookController::class, 'store'])->name('admin.books.store');
 Route::get('admin/books/{book}', [BookController::class, 'show'])->name('admin.books.show');

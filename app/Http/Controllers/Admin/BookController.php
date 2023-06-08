@@ -15,7 +15,11 @@ class BookController extends Controller
         $books = Book::simplePaginate(10);
         return view('admin.books.index', compact('books'));
     }
-
+ public function index_table()
+    {
+        $books = Book::simplePaginate(10);
+        return view('admin.books.index-table', compact('books'));
+    }
     public function create()
     {
         $categories = Category::all();
