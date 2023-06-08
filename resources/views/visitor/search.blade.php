@@ -19,6 +19,8 @@
 @section('content')
 
 
+<div><h3>Search Result</h3></div>
+
 @if($books->isEmpty())
     <div class="alert alert-info">No books found.</div>
 @else
@@ -47,7 +49,9 @@
                                 
                             </div>
                             <div class="bd-program-content mb-40">
-                                <h3 class="bd-program-title"><a class="hover-clr-1" href="{{ route('admin.books.show', $book->id) }}">{{ $book->title }}</a></h3>
+
+                                <h3 class="bd-program-title"><a class="hover-clr-1" href="{{ route('book_details.show', $book->id) }}">{{ $book->title }}</a></h3>
+
                                 <p>{{ Str::limit($book->details, 30) }}</p>
                             </div>
                             <div class="bd-program-info-wrapper theme-bg">

@@ -38,16 +38,16 @@ Route::get('/about_us', function () {
 })->name('about');
 
 
-Route::get('admin/books', [BookController::class, 'index'])->name('admin.books.index');
-Route::get('admin/books-table', [BookController::class, 'index_table'])->name('admin.books.index.table');
+Route::middleware(['auth', 'my.admin'])->get('admin/books', [BookController::class, 'index'])->name('admin.books.index');
+Route::middleware(['auth', 'my.admin'])->get('admin/books-table', [BookController::class, 'index_table'])->name('admin.books.index.table');
 
-Route::get('admin/books/create', [BookController::class, 'create'])->name('admin.books.create');
-Route::post('admin/books', [BookController::class, 'store'])->name('admin.books.store');
-Route::get('admin/books/{book}', [BookController::class, 'show'])->name('admin.books.show');
-Route::get('admin/books/{book}/edit', [BookController::class, 'edit'])->name('admin.books.edit');
-Route::put('admin/books/{book}', [BookController::class, 'update'])->name('admin.books.update');
-Route::delete('admin/books/{book}', [BookController::class, 'destroy'])->name('admin.books.destroy');
-Route::get('admin/user-purchases', [UserController::class, 'showUserPurchases'])->name('admin.user.purchases');
+Route::middleware(['auth', 'my.admin'])->get('admin/books/create', [BookController::class, 'create'])->name('admin.books.create');
+Route::middleware(['auth', 'my.admin'])->post('admin/books', [BookController::class, 'store'])->name('admin.books.store');
+Route::middleware(['auth', 'my.admin'])->get('admin/books/{book}', [BookController::class, 'show'])->name('admin.books.show');
+Route::middleware(['auth', 'my.admin'])->get('admin/books/{book}/edit', [BookController::class, 'edit'])->name('admin.books.edit');
+Route::middleware(['auth', 'my.admin'])->put('admin/books/{book}', [BookController::class, 'update'])->name('admin.books.update');
+Route::middleware(['auth', 'my.admin'])->delete('admin/books/{book}', [BookController::class, 'destroy'])->name('admin.books.destroy');
+Route::middleware(['auth', 'my.admin'])->get('admin/user-purchases', [UserController::class, 'showUserPurchases'])->name('admin.user.purchases');
 
 
 

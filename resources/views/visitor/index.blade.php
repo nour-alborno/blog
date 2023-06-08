@@ -48,7 +48,9 @@
                                 
                             </div>
                             <div class="bd-program-content mb-40">
-                                <h3 class="bd-program-title"><a class="hover-clr-1" href="{{ route('admin.books.show', $book->id) }}">{{ $book->title }}</a></h3>
+
+                                <h3 class="bd-program-title"><a class="hover-clr-1" href="{{ route('book_details.show', $book->id) }}">{{ $book->title }}</a></h3>
+
                                 <p>{{ Str::limit($book->details, 30) }}</p>
                             </div>
                             <div class="bd-program-info-wrapper theme-bg">
@@ -88,7 +90,7 @@
                             <div class="bd-program-thumb-wrapper">
                                 <a href="{{ route('book_details.show', $bookk->id) }}">
                                     <div class="bd-program-thumb">
-                                        <img src="{{ asset('storage/app/public/' . $book->book_img) }}" alt="Image not found">
+                                        <img src="{{ asset('storage/' . $bookk->book_img) }}" alt="Image not found">
                                     </div>
                                 </a>
                                 <div class="bd-program-shape">
@@ -103,8 +105,10 @@
                                 
                             </div>
                             <div class="bd-program-content mb-40">
-                                <h3 class="bd-program-title"><a class="hover-clr-1" href="{{ route('admin.books.show', $book->id) }}">{{ $book->title }}</a></h3>
-                                <p>{{ Str::limit($book->details, 30) }}</p>
+
+                                <h3 class="bd-program-title"><a class="hover-clr-1" href="{{ route('book_details.show', $bookk->id) }}">{{ $bookk->title }}</a></h3>
+                                <p>{{ Str::limit($bookk->details, 30) }}</p>
+
                             </div>
                             <div class="bd-program-info-wrapper theme-bg">
                                 <div class="bd-program-info">
