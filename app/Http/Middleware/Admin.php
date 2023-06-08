@@ -18,10 +18,10 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::User()->type == 1)
+        if(Auth::User()->type == 1){
             return $next($request);
-        else
-            abort(401); 
+        }else{
+            abort(401); }
     }
 
 

@@ -1,5 +1,5 @@
 @extends('layouts.visitor_home')
-@section('title', 'Search')
+@section('title', 'Search Result')
  <!-- CSS here -->
  <link rel="stylesheet" href="assets/css/bootstrap.css">
    <link rel="stylesheet" href="assets/css/meanmenu.css">
@@ -23,7 +23,7 @@
     <div class="alert alert-info">No books found.</div>
 @else
     <div class="row">
-        @foreach($book as $book)
+        @foreach($books as $book)
             <div class="col-md-4">
                 <!-- program area start here  -->
                 <section class="bd-program-area pt-120 pb-80">
@@ -32,7 +32,7 @@
                             <div class="bd-program-thumb-wrapper">
                                 <a href="{{ route('book_details.show', $book->id) }}">
                                     <div class="bd-program-thumb">
-                                        <img src="{{ asset('storage/app/public/' . $book->book_img) }}" alt="Image not found">
+                                        <img src="{{ asset('storage/' . $book->book_img) }}" alt="Image not found">
                                     </div>
                                 </a>
                                 <div class="bd-program-shape">
@@ -47,7 +47,7 @@
                                 
                             </div>
                             <div class="bd-program-content mb-40">
-                                <h3 class="bd-program-title"><a class="hover-clr-1" href="{{ route('book_details.show, $book->id) }}">{{ $book->title }}</a></h3>
+                                <h3 class="bd-program-title"><a class="hover-clr-1" href="{{ route('books.show', $book->id) }}">{{ $book->title }}</a></h3>
                                 <p>{{ Str::limit($book->details, 30) }}</p>
                             </div>
                             <div class="bd-program-info-wrapper theme-bg">
@@ -98,6 +98,9 @@
 
 
 @endsection
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 @extends('layouts.visitor_home')
-@section('title', 'Home')
+@section('title', 'Books')
  <!-- CSS here -->
  <link rel="stylesheet" href="assets/css/bootstrap.css">
    <link rel="stylesheet" href="assets/css/meanmenu.css">
@@ -18,7 +18,7 @@
 
 @section('content')
 
-
+<div style="display: flex; justify-content: center; align-items: center; "><h2 >Library</h2></div>
 @if($books->isEmpty())
     <div class="alert alert-info">No books found.</div>
 @else
@@ -32,7 +32,7 @@
                             <div class="bd-program-thumb-wrapper">
                                 <a href="{{ route('book_details.show', $book->id) }}">
                                     <div class="bd-program-thumb">
-                                        <img src="{{ asset('storage/app/public/' . $book->book_img) }}" alt="Image not found">
+                                        <img src="{{ asset('storage/' . $book->book_img) }}" alt="Image not found">
                                     </div>
                                 </a>
                                 <div class="bd-program-shape">
