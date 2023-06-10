@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Models\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        $users = User::simplePaginate(20);
+        return view('admin.user_purchases_table', compact('users'));
+    }
         public function showUserPurchases()
 {
     $userPurchases = DB::table('users')

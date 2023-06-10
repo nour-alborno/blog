@@ -1,347 +1,544 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>@yield('title')</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!DOCTYPE html>
- <html lang="en">
-	<!--begin::Head-->
-	<head><base href="../../">
-		<meta charset="utf-8" />
-		<title>@yield('title')</title>
-		<meta name="description" content="Page with empty content" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<link rel="canonical" href="https://keenthemes.com/metronic" />
-		<!--begin::Fonts-->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-		<!--end::Fonts-->
-		<!--begin::Page Vendors Styles(used by this page)-->
-		<link href="{{asset('admin_assets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<!--end::Page Vendors Styles-->
-		<!--begin::Global Theme Styles(used by all pages)-->
-		<link href="{{asset('admin_assets/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('admin_assets/plugins/custom/prismjs/prismjs.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('admin_assets/css/style.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<!--end::Global Theme Styles-->
-		<!--begin::Layout Themes(used by all pages)-->
-		<link href="{{asset('admin_assets/css/themes/layout/header/base/light.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('admin_assets/css/themes/layout/header/menu/light.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('admin_assets/css/themes/layout/brand/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('admin_assets/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
-		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="{{asset('admin_assets/media/logos/favicon.ico')}}" />
-	</head>
-	<!--end::Head-->
-	<!--begin::Body-->
-	<body direction="rtl" dir="rtl" style="direction: rtl"  id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
-		<!--begin::Main-->
-		<!--begin::Header Mobile-->
-		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
-			<!--begin::Logo-->
-			<a href="index.html">
-				<img alt="Logo" src="{{asset('admin_assets/media/logos/logo-light.png')}}" />
-			</a>
-			<!--end::Logo-->
-			<!--begin::Toolbar-->
-			<div class="d-flex align-items-center">
-				<!--begin::Aside Mobile Toggle-->
-				<button class="btn p-0 burger-icon burger-icon-left" id="kt_aside_mobile_toggle">
-					<span></span>
-				</button>
-				<!--end::Aside Mobile Toggle--> 
-				<!--begin::Topbar Mobile Toggle-->
-				<button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
-					<span class="svg-icon svg-icon-xl">
-						<!--begin::Svg Icon | path:admin_assets/media/svg/icons/General/User.svg-->
-						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-								<polygon points="0 0 24 0 24 24 0 24" />
-								<path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-								<path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
-							</g>
-						</svg>
-						<!--end::Svg Icon-->
-					</span>
-				</button>
-				<!--end::Topbar Mobile Toggle-->
-			</div>
-			<!--end::Toolbar-->
-		</div>
-		<!--end::Header Mobile-->
-		<div class="d-flex flex-column flex-root">
-			<!--begin::Page-->
-			<div class="d-flex flex-row flex-column-fluid page">
-				<!--begin::Aside-->
-				<div class="aside aside-left aside-fixed d-flex flex-column flex-row-auto" id="kt_aside">
-					<!--begin::Brand-->
-					<div class="brand flex-column-auto" id="kt_brand">
-						<!--begin::Logo-->
-						<a href="index.html" class="brand-logo">
-							<img alt="Logo" src="{{asset('admin_assets/media/logos/logo-light.png')}}" />
-						</a>
-						<!--end::Logo-->
-						<!--begin::Toggle-->
-						<button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
-							<span class="svg-icon svg-icon svg-icon-xl">
-								<!--begin::Svg Icon | path:admin_assets/media/svg/icons/Navigation/Angle-double-left.svg-->
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-									<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-										<polygon points="0 0 24 0 24 24 0 24" />
-										<path d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z" fill="#000000" fill-rule="nonzero" transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999)" />
-										<path d="M10.7071009,15.7071068 C10.3165766,16.0976311 9.68341162,16.0976311 9.29288733,15.7071068 C8.90236304,15.3165825 8.90236304,14.6834175 9.29288733,14.2928932 L15.2928873,8.29289322 C15.6714663,7.91431428 16.2810527,7.90106866 16.6757187,8.26284586 L22.6757187,13.7628459 C23.0828377,14.1360383 23.1103407,14.7686056 22.7371482,15.1757246 C22.3639558,15.5828436 21.7313885,15.6103465 21.3242695,15.2371541 L16.0300699,10.3841378 L10.7071009,15.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(15.999997, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-15.999997, -11.999999)" />
-									</g>
-								</svg>
-								<!--end::Svg Icon-->
-							</span>
-						</button>
-						<!--end::Toolbar-->
-					</div>
-					<!--end::Brand-->
-					<!--begin::Aside Menu-->
-					<div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
-						<!--begin::Menu Container-->
-						<div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
-							<!--begin::Menu Nav-->
-							<ul class="menu-nav">
-								<li class="menu-item" aria-haspopup="true">
-									<a href="index.html" class="menu-link">
-										<i class="menu-icon flaticon-home"></i>
-										<span class="menu-text">Dashboard</span>
-									</a>
-								</li> 
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-									<a href="javascript:;" class="menu-link menu-toggle">
-										<i class="menu-icon flaticon-web"></i>
-										<span class="menu-text">Applications</span>
-										<i class="menu-arrow"></i>
-									</a>
-									<div class="menu-submenu">
-										<i class="menu-arrow"></i>
-										<ul class="menu-subnav">
-											<li class="menu-item menu-item-parent" aria-haspopup="true">
-												<span class="menu-link">
-													<span class="menu-text">Applications</span>
-												</span>
-											</li>
-										    <li class="menu-item" aria-haspopup="true">
-												<a href="custom/apps/inbox.html" class="menu-link">
-													<i class="menu-bullet menu-bullet-line">
-														<span></span>
-													</i>
-													<span class="menu-text">Inbox</span>
-													<span class="menu-label">
-														<span class="label label-danger label-inline">new</span>
-													</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-									<a href="javascript:;" class="menu-link menu-toggle">
-										<i class="menu-icon flaticon-tabs"></i>
-										<span class="menu-text">Pages</span>
-										<i class="menu-arrow"></i>
-									</a>
-									<div class="menu-submenu">
-										<i class="menu-arrow"></i>
-										<ul class="menu-subnav">
-											<li class="menu-item menu-item-parent" aria-haspopup="true">
-												<span class="menu-link">
-													<span class="menu-text">Pages</span>
-												</span>
-											</li>
-										    <li class="menu-item" aria-haspopup="true">
-												<a href="custom/apps/inbox.html" class="menu-link">
-													<i class="menu-bullet menu-bullet-line">
-														<span></span>
-													</i>
-													<span class="menu-text">Inbox</span>
-													<span class="menu-label">
-														<span class="label label-danger label-inline">new</span>
-													</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-						   </ul>
-							<!--end::Menu Nav-->
-						</div>
-						<!--end::Menu Container-->
-					</div>
-					<!--end::Aside Menu-->
-				</div>
-				<!--end::Aside-->
-				<!--begin::Wrapper-->
-				<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
-					<!--begin::Header-->
-					<div id="kt_header" class="header header-fixed" style="background-color: white">
-						<!--begin::Container-->
-						<div class="container-fluid d-flex align-items-stretch justify-content-between">
-							<!--begin::Header Menu Wrapper-->
-							<div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper"></div>
-							<!--end::Header Menu Wrapper-->
-							<!--begin::Topbar-->
-							<div class="topbar"> 
-								<!--begin::Languages-->
-								<div class="dropdown">
-									<!--begin::Toggle-->
-									<div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
-										<div class="topbar-item">
-									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2">
-										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{Auth::User()->name}}</span>
-										<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-											<span class="symbol-label font-size-h5 font-weight-bold">S</span>
-										</span>
-									</div>
-								</div>
-									</div>
-									<!--end::Toggle-->
-									<!--begin::Dropdown-->
-									<div class="dropdown-menu p-0 m-0 dropdown-menu-anim-up dropdown-menu-sm dropdown-menu-right">
-										<!--begin::Nav-->
-										<ul class="navi navi-hover py-4">
-											<!--begin::Item-->
-											<li class="navi-item">
-												<a href="#" class="navi-link">
-													<span class="symbol symbol-20 mr-3">
-														<img src="{{asset('admin_assets/media/svg/flags/226-united-states.svg')}}" alt="" />
-													</span>
-													<span class="navi-text">English</span>
-												</a>
-											</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="navi-item active">
+   <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">"
 
-											<form method="POST" action="{{ route('logout') }}">
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="{{asset('visitor_assets/img/logo/favicon.png')}}">
+
+   <!-- css')}} here -->
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/bootstrap.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/meanmenu.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/animate.min.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/swiper-bundle.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/slick.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/nouislider.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/backtotop.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/magnific-popup.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/nice-select.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/flaticon_kindedo.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/font-awesome-pro.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/spacing.css')}}">
+   <link rel="stylesheet" href="{{asset('visitor_assets/css/main.css')}}">
+
+   
+</head>
+
+<body>
+   <!-- pre loader area start -->
+   <div id="loading">
+      <div id="preloader">
+         <div class="preloader-thumb-wrap">
+            <div class="preloader-thumb">
+               <div class="preloader-border"></div>
+               <img src="{{asset('visitor_assets/img/bg/preloader.png')}}" alt="img not found!">
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- pre loader area end -->
+
+   <!-- back to top start -->
+   <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+   </div>
+   <!-- back to top end -->
+
+   <!-- header area start -->
+   <header>
+      <div class="bd-header">
+         <!-- header top area start  -->
+         <div class="bd-header-top d-none d-lg-block bg-white">
+            <div class="bd-header-top-shape">
+               <img src="{{asset('visitor_assets/img/shape/wave-section-break.png')}}" alt="Shape not found">
+            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- header top area end -->
+
+         <!-- header bottom area start -->
+         <div id="header-sticky" class="bd-header-bottom bd-header-transparent">
+            <div class="container">
+               <div class="mega-menu-wrapper p-relative">
+                  <div class="d-flex align-items-center justify-content-between">
+                     <div class="bd-header-logo">
+                        <a href="index.html">
+                           <img src="{{asset('visitor_assets/img/logo/logo.svg')}}" alt="logo">
+                        </a>
+                     </div>
+                     <div class="bd-main-menu d-none d-lg-flex align-items-center">
+                        <nav id="mobile-menu">
+                           <ul>
+                          
+                           <li>
+                                 <a href="{{route('admin.books.index')}}">Home</a>
+                                 </li>
+
+                                 <li >
+                                 <a href="{{route('admin.books.index.table')}}">Books Table</a>
+                               
+                              </li>   
+                            <li>
+                                 <a href="{{route('admin.user.purchases')}}">User purchases</a>
+                              </li>
+                              @if(Auth::User() && Auth::User()->id == 1)
+                              <li >
+                                 <a href="{{route('admin.books.index')}}">Admin Panel</a>
+                              </li>
+                              @endif
+
+
+
+                              @if(!Auth::User())
+                              <li >
+                                 <a href="{{route('register')}}">Register</a>
+                              </li>
+                              @endif
+                           </ul>
+                        </nav>
+                        <div class="bd-search-btn-wrapper">
+                           <button class="bd-search-open-btn">
+                              <i class="flaticon-search"></i>
+                           </button>
+                        </div>
+                     </div>
+                     <div class="bd-header-bottom-right d-flex justify-content-end align-items-center">
+                      
+                        <div class="bd-header-btn d-none d-xl-block">
+                           @if(Auth::User())
+                              <form method="POST" action="{{ route('logout') }}">
 														@csrf
-												<a href="route('logout')"
-                                                onclick="event.preventDefault();
-                                                this.closest('form').submit();" class="navi-link">
-												Logout
-									
-												</a>
-												</form>
-											</li>
-											<!--end::Item-->
-										</ul>
-										<!--end::Nav-->
-									</div>
-									<!--end::Dropdown-->
-								</div>
-								<!--end::Languages-->
-							 </div>
-							<!--end::Topbar-->
-						</div>
-						<!--end::Container-->
-					</div>
-					<!--end::Header-->
-					
-					
-					<!--begin::Content-->
-					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-						<!--begin::Subheader-->
-						<div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
-							<div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
-								<!--begin::Info-->
-								<div class="d-flex align-items-center flex-wrap mr-1">
-									<!--begin::Page Heading-->
-									<div class="d-flex align-items-baseline flex-wrap mr-5">
-										<!--begin::Page Title-->
-										<h5 class="text-dark font-weight-bold my-1 mr-5">Empty Page</h5>
-										<!--end::Page Title-->
-										<!--begin::Breadcrumb-->
-										<ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
-											<li class="breadcrumb-item">
-												<a href="" class="text-muted">General</a>
-											</li>
-											<li class="breadcrumb-item">
-												<a href="" class="text-muted">Empty Page</a>
-											</li>
-										</ul>
-										<!--end::Breadcrumb-->
-									</div>
-									<!--end::Page Heading-->
-								</div>
-								<!--end::Info-->
-							</div>
-						</div>
-						<!--end::Subheader-->
-						<!--begin::Entry-->
-						<div class="d-flex flex-column-fluid">
-							<!--begin::Container-->
-							<div class="container">
-							   @yield('content')
 
-							</div>
-							<!--end::Container-->
-						</div>
-						<!--end::Entry-->
-					</div>
-					<!--end::Content-->
-					
-					
-					
-					
-					<!--begin::Footer-->
-					<div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
-						<!--begin::Container-->
-						<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-							<!--begin::Copyright-->
-							<div class="text-dark order-2 order-md-1">
-								<span class="text-muted font-weight-bold mr-2">2020©</span>
-								<a href="http://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">Keenthemes</a>
-							</div>
-							<!--end::Copyright-->
-							<!--begin::Nav-->
-							<div class="nav nav-dark">
-								<a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">About</a>
-								<a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-5">Team</a>
-								<a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-0 pr-0">Contact</a>
-							</div>
-							<!--end::Nav-->
-						</div>
-						<!--end::Container-->
-					</div>
-					<!--end::Footer-->
-				</div>
-				<!--end::Wrapper-->
-			</div>
-			<!--end::Page-->
-		</div>
-		<!--end::Main-->
-		
-		<!--begin::Scrolltop-->
-		<div id="kt_scrolltop" class="scrolltop">
-			<span class="svg-icon">
-				<!--begin::Svg Icon | path:admin_assets/media/svg/icons/Navigation/Up-2.svg-->
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-						<polygon points="0 0 24 0 24 24 0 24" />
-						<rect fill="#000000" opacity="0.3" x="11" y="10" width="2" height="10" rx="1" />
-						<path d="M6.70710678,12.7071068 C6.31658249,13.0976311 5.68341751,13.0976311 5.29289322,12.7071068 C4.90236893,12.3165825 4.90236893,11.6834175 5.29289322,11.2928932 L11.2928932,5.29289322 C11.6714722,4.91431428 12.2810586,4.90106866 12.6757246,5.26284586 L18.6757246,10.7628459 C19.0828436,11.1360383 19.1103465,11.7686056 18.7371541,12.1757246 C18.3639617,12.5828436 17.7313944,12.6103465 17.3242754,12.2371541 L12.0300757,7.38413782 L6.70710678,12.7071068 Z" fill="#000000" fill-rule="nonzero" />
-					</g>
-				</svg>
-				<!--end::Svg Icon-->
-			</span>
-		</div>
-		<!--end::Scrolltop-->
-		<!--begin::Demo Panel-->
-		 <!--end::Demo Panel-->
-		<script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
-		<!--begin::Global Config(global config for global JS scripts)-->
-		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
-		<!--end::Global Config-->
-		<!--begin::Global Theme Bundle(used by all pages)-->
-		<script src="{{asset('admin_assets/plugins/global/plugins.bundle.js')}}"></script>
-		<script src="{{asset('admin_assets/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>
-		<script src="{{asset('admin_assets/js/scripts.bundle.js')}}"></script>
-		<!--end::Global Theme Bundle-->
-		<!--begin::Page Vendors(used by this page)-->
-		<script src="{{asset('admin_assets/plugins/custom/fullcalendar/fullcalendar.bundle.js')}}"></script>
-		<!--end::Page Vendors-->
-		<!--begin::Page Scripts(used by this page)-->
-		<script src="{{asset('admin_assets/js/pages/widgets.js')}}"></script>
-		<!--end::Page Scripts-->
-	</body>
-	<!--end::Body-->
+                              <a href="route('logout')"
+                               onclick="event.preventDefault();
+                              this.closest('form').submit();" class="bd-btn">
+
+                              <span class="bd-btn-inner">
+                                 <span class="bd-btn-normal">Logout</span>
+                                 <span class="bd-btn-hover">Logout</span>
+                              </span>
+                           </a>
+                           </form>
+                            @else
+                              <a href="{{route('login')}}" class="bd-btn">
+                              <span class="bd-btn-inner">
+                                 <span class="bd-btn-normal">Login</span>
+                                 <span class="bd-btn-hover">Login</span>
+                              </span>
+                           </a>
+                           
+                        @endif
+                        </div>
+                       
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- header bottom area end -->
+      </div>
+   </header>
+   <!-- header area end here -->
+
+   <br>
+   <br>
+   <br>
+   <br>
+   
+   <div style="padding: 20; margin: 50px;">
+   @yield('content')
+   </div>
+
+
+
+   <!-- footer area start -->
+   <footer>
+      <div class="bd-footer-area pt-200">
+         <!-- footer area bg here  -->
+         <div class="bd-gradient-bg"></div>
+         <div class="bd-footer pt-90 pb-25">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="bd-footer-widget bd-footer-widget-1 mb-50">
+                        <div class="bd-footer-logo mb-35">
+                           <a href="index.html"> <img src="{{asset('visitor_assets/img/logo/logo.svg')}}" alt="img not found!"></a>
+                        </div>
+                        <div class="bd-footer-widget-content mb-40">
+                           <p>In our Adult Participation programs, for most students, it is their first program in
+                              Kindedo. </p>
+                        </div>
+                        <div class="bd-footer-bottom-social pb-20">
+                           <ul>
+                              <li><a target="_blank" href="https://www.facebook.com/"><i
+                                       class="fa-brands fa-facebook-f"></i></a></li>
+                              <li><a target="_blank" href="https://twitter.com/"><i
+                                       class="fa-brands fa-twitter"></i></a></li>
+                              <li><a target="_blank" href="https://www.youtube.com/"><i
+                                       class="fa-brands fa-youtube"></i></a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="bd-footer-widget bd-footer-widget-2 mb-50">
+                        <div class="bd-footer-widget-content">
+                           <h4 class="bd-footer-widget-title mb-30">Quick links</h4>
+                           <div class="bd-footer-list">
+                              <ul>
+                                 <li><a href="#">About</a></li>
+                                 <li><a href="#">Courses</a></li>
+                                 <li><a href="#">Shop</a></li>
+                                 <li><a href="#">Pages</a></li>
+                                 <li><a href="#">Blog</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="bd-footer-widget bd-footer-widget-3 mb-50">
+                        <div class="bd-footer-widget-content">
+                           <h4 class="bd-footer-widget-title mb-30">Customer Service</h4>
+                           <div class="bd-footer-list">
+                              <ul>
+                                 <li><a href="#">Recently Viewed</a></li>
+                                 <li><a href="#">New Products</a></li>
+                                 <li><a href="#">Shipping & Returns</a></li>
+                                 <li><a href="#">Senior Kg</a></li>
+                                 <li><a href="#">Become a Seller</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="bd-footer-widget bd-footer-widget-4">
+                        <div class="bd-footer-widget-content">
+                           <h4 class="bd-footer-widget-title mb-30">Contact Us</h4>
+                           <div class="bd-footer-contact">
+                              <ul>
+                                 <li><i class="fa-light fa-location-dot"></i><a href="#">14/A, Kilix Home Tower,
+                                       NYC</a></li>
+                                 <li><i class="fa-light fa-phone"></i><a href="tel:9072003462">907-200-3462</a></li>
+                                 <li><i class="fa-light fa-envelope"></i><a
+                                       href="mailto:support@kindedo.com">Support@kindedo.com</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="bd-footer-copyright pb-10">
+            <div class="bd-footer-copyright-line pb-20">
+               <img src="{{asset('visitor_assets/img/shape/line-bottom-shape.png')}}" alt="bottom line not found">
+            </div>
+            <div class="container">
+               <div class="bd-footer-copyright-wrap d-flex align-items-md-center justify-content-center">
+                  <div class="bd-footer-copyright-text pb-20">
+                     <p>Copyrighted by &copy;2023 <a href="https://themeforest.net/user/bdevs/portfolio"
+                           rel="nofollow">BDevs</a>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- footer area end -->
+
+   <!-- offcanvas area start -->
+   <div class="offcanvas__area">
+      <div class="offcanvas__bg"></div>
+      <div class="offcanvas__wrapper">
+         <div class="offcanvas__content">
+            <div class="offcanvas__top mb-40 d-flex justify-content-between align-items-center">
+               <div class="offcanvas__logo logo">
+                  <a href="index.html">
+                     <img src="{{asset('visitor_assets/img/logo/logo.svg')}}" alt="logo">
+                  </a>
+               </div>
+               <div class="offcanvas__close">
+                  <button class="offcanvas__close-btn">
+                     <i class="fa-thin fa-times"></i>
+                  </button>
+               </div>
+            </div>
+            <div class="offcanvas__search mb-0">
+               <form action="#">
+                  <button type="submit"><i class="flaticon-search"></i></button>
+                  <input type="text" placeholder="Search here">
+               </form>
+            </div>
+            <div class="mobile-menu fix mt-40"></div>
+            <div class="offcanvas__about d-none d-lg-block mt-30 mb-30">
+               <h4>About Kindedo</h4>
+               <p>With the help of teachers and environment as the third teacher, students
+                  have opportunities to confidently take risks.</p>
+            </div>
+            <div class="offcanvas__contact mt-30 mb-30">
+               <h4>Contact Info</h4>
+               <ul>
+                  <li class="d-flex align-items-center gap-2">
+                     <div class="offcanvas__contact-icon">
+                        <a target="_blank"
+                           href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">
+                           <i class="fal fa-map-marker-alt"></i></a>
+                     </div>
+                     <div class="offcanvas__contact-text">
+                        <a target="_blank"
+                           href="https://www.google.com/maps/place/Dhaka/@23.7806207,90.3492859,12z/data=!3m1!4b1!4m5!3m4!1s0x3755b8b087026b81:0x8fa563bbdd5904c2!8m2!3d23.8104753!4d90.4119873">12/A,
+                           Mirnada City Tower, NYC</a>
+                     </div>
+                  </li>
+                  <li class="d-flex align-items-center gap-2">
+                     <div class="offcanvas__contact-icon">
+                        <a href="tel:+088889797697"><i class="far fa-phone"></i></a>
+                     </div>
+                     <div class="offcanvas__contact-text">
+                        <a href="tel:+088889797697">088889797697</a>
+                     </div>
+                  </li>
+                  <li class="d-flex align-items-center gap-2">
+                     <div class="offcanvas__contact-icon">
+                        <a href="mailto:support@gmail.com"><i class="fal fa-envelope"></i></a>
+                     </div>
+                     <div class="offcanvas__contact-text">
+                        <a href="mailto:support@gmail.com">support@mail.com</a>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+            <div class="offcanvas__social">
+               <ul>
+                  <li><a target="_blank" href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                  </li>
+                  <li><a target="_blank" href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a target="_blank" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="body-overlay"></div>
+   <!-- offcanvas area end -->
+
+
+   <!-- product view modal start -->
+   <div class="modal bd-shop-modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title d-none" id="exampleModalLabel">Modal title</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-6">
+                        <div class="product-d-img-tab-wrapper mb-60">
+                           <div class="product-d-img-nav">
+                              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                 <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="pro-1-tab" data-bs-toggle="tab"
+                                       data-bs-target="#pro-1" type="button" role="tab" aria-controls="pro-1"
+                                       aria-selected="false">
+                                       <img src="{{asset('visitor_assets/img/shop/tab-1.jpg')}}" alt="img not found">
+                                    </button>
+                                 </li>
+                                 <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pro-2-tab" data-bs-toggle="tab" data-bs-target="#pro-2"
+                                       type="button" role="tab" aria-controls="pro-2" aria-selected="true">
+                                       <img src="{{asset('visitor_assets/img/shop/tab-2.jpg')}}" alt="img not found">
+                                    </button>
+                                 </li>
+                                 <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pro-3-tab" data-bs-toggle="tab" data-bs-target="#pro-3"
+                                       type="button" role="tab" aria-controls="pro-3" aria-selected="false">
+                                       <img src="{{asset('visitor_assets/img/shop/tab-3.jpg')}}" alt="img not found">
+                                    </button>
+                                 </li>
+                                 <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="pro-4-tab" data-bs-toggle="tab" data-bs-target="#pro-4"
+                                       type="button" role="tab" aria-controls="pro-4" aria-selected="false">
+                                       <img src="{{asset('visitor_assets/img/shop/tab-4.jpg')}}" alt="img not found">
+                                    </button>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="product-d-img-tab">
+                              <div class="tab-content" id="productDetailsTab">
+                                 <div class="tab-pane fade active show" id="pro-1" role="tabpanel"
+                                    aria-labelledby="pro-1-tab">
+                                    <img class="active" src="{{asset('visitor_assets/img/shop/9.2.jpg')}}" alt="img not found">
+                                 </div>
+                                 <div class="tab-pane fade" id="pro-2" role="tabpanel" aria-labelledby="pro-2-tab">
+                                    <img class="active" src="{{asset('visitor_assets/img/shop/9.1.jpg')}}" alt="img not found">
+                                 </div>
+                                 <div class="tab-pane fade" id="pro-3" role="tabpanel" aria-labelledby="pro-3-tab">
+                                    <img class="active" src="{{asset('visitor_assets/img/shop/8.1.jpg')}}" alt="img not found">
+                                 </div>
+                                 <div class="tab-pane fade" id="pro-4" role="tabpanel" aria-labelledby="pro-4-tab">
+                                    <img class="active" src="{{asset('visitor_assets/img/shop/8.3.png')}}" alt="img not found">
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="product-side-info mb-60">
+                           <div class="product-category-review">
+                              <div class="product-d-category">Organic, Food</div>
+                              <div class="product-d-review">
+                                 <div class="rating">
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="fas fa-star"></i></a>
+                                    <a href="#"><i class="far fa-star"></i></a>
+                                 </div>
+                                 <span>10 Reviews</span>
+                              </div>
+                           </div>
+                           <h4 class="product-name">baby shoes</h4>
+                           <div class="product-price">
+                              <span class="price-old">$63.00</span>
+                              <span class="price-now">$59.00</span>
+                           </div>
+
+                           <p class="mb-30">
+                              Kindedo seemed great for my kindergartener-to-be, a full santa believer. Not so the winter
+                              holiday
+                              episode, and I'm not sure how I'm going to police. I really happy to see my child there
+                           </p>
+                           <div class="product-quantity-cart mb-30">
+                              <div class="product-quantity-form">
+                                 <form action="#">
+                                    <button class="cart-minus">
+                                       <i class="far fa-minus"></i>
+                                    </button>
+                                    <input class="cart-input" type="text" value="1">
+                                    <button class="cart-plus">
+                                       <i class="far fa-plus"></i>
+                                    </button>
+                                 </form>
+                              </div>
+                              <a href="cart.html" class="bd-cart-btn"><i class="fas fa-shopping-basket"></i>Add to
+                                 Cart</a>
+                           </div>
+                           <div class="product-d-meta sku mb-10">
+                              <span>SKU:</span>
+                              <span>BO1D0MX8SJ</span>
+                           </div>
+                           <div class="product-d-meta ockcategories mb-10">
+                              <span>Categories:</span>
+                              <span>Garden, Flower, Leaf</span>
+                           </div>
+                           <div class="product-d-meta tags mb-10">
+                              <span>Tags:</span>
+                              <span>Vegetable, Flower, Leaf</span>
+                           </div>
+                           <div class="product-d-meta share mb-10">
+                              <span>Share:</span>
+                              <div class="social-links">
+                                 <ul>
+                                    <li>
+                                       <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                       <a href="#"><i class="fab fa-behance"></i></a>
+                                    </li>
+                                    <li>
+                                       <a href="#"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                    <li>
+                                       <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- product view modal end -->
+
+   <!-- serach popup area start here  -->
+   <div class="bd-search-popup-area">
+      <div class="container">
+         <div class="row">
+            <div class="col-12">
+               <div class="bd-search-popup">
+                  <div class="bd-search-form">
+                     <form action="{{ route('book.search') }}" method="GET">
+                        <div class="bd-search-input">
+                           <input type="search" name="search" value="" placeholder="Type here to serach ...">
+                           <div class="bd-search-submit">
+                              <button type="submit"><i class="flaticon-search"></i></button>
+                           </div>
+                        </div>
+                     </form>
+                     <div class="bd-search-close">
+                        <div class="bd-search-close-btn">
+                           <button><i class="fa-thin fa-close"></i></button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- search popup overlay  -->
+   <div class="bd-search-overlay"></div>
+   <!-- serach popup area end here  -->
+
+   <!-- JS here -->
+   <script src="{{asset('visitor_assets/js/vendor/jquery.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/vendor/waypoints.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/bootstrap-bundle.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/meanmenu.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/swiper-bundle.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/slick.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/nouislider.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/magnific-popup.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/parallax.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/backtotop.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/nice-select.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/wow.min.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/isotope-pkgd.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/imagesloaded-pkgd.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/ajax-form.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/jquery.appear.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/jquery.odometer.min.js')}}"></script>
+   <script src="{{asset('visitor_assets/js/main.js')}}"></script>
+</body>
+
+
+<!-- Mirrored from codeskdhaka.com/html/kindedo-prev/kindedo/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 May 2023 08:03:52 GMT -->
 </html>

@@ -1,4 +1,4 @@
-@extends('layouts.visitor_home')
+@extends('layouts.admin_home')
 @section('title', 'Books')
    <!-- CSS here -->
    <link rel="stylesheet" href="assets/css/bootstrap.css">

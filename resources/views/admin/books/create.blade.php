@@ -1,4 +1,4 @@
-@extends('layouts.visitor_home')
+@extends('layouts.admin_home')
 @section('title', 'Add New Book')
 @section('content')
     <div class="container">

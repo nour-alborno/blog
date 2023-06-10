@@ -48,6 +48,7 @@ Route::middleware(['auth', 'my.admin'])->get('admin/books/{book}/edit', [BookCon
 Route::middleware(['auth', 'my.admin'])->put('admin/books/{book}', [BookController::class, 'update'])->name('admin.books.update');
 Route::middleware(['auth', 'my.admin'])->delete('admin/books/{book}', [BookController::class, 'destroy'])->name('admin.books.destroy');
 Route::middleware(['auth', 'my.admin'])->get('admin/user-purchases', [UserController::class, 'showUserPurchases'])->name('admin.user.purchases');
+Route::middleware(['auth', 'my.admin'])->get('admin/user-purchases-table', [UserController::class, 'index'])->name('admin.user.index');
 
 
 
