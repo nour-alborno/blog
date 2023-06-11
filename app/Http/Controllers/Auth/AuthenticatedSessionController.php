@@ -31,10 +31,13 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+          
+        if(Auth::user()->type == 0){
         return redirect()->intended(RouteServiceProvider::HOME);
-    }
+          }
+        return redirect('admin/books');
 
+    }
     /**
      * Destroy an authenticated session.
      *
