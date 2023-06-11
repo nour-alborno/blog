@@ -140,11 +140,7 @@
                                  <a href="{{route('about')}}">About us</a>
                               </li>
                             
-                              @if(Auth::User() && Auth::User()->id == 1)
-                              <li >
-                                 <a href="{{route('admin.books.index')}}">Admin Panel</a>
-                              </li>
-                              @endif
+                             
 
 
 

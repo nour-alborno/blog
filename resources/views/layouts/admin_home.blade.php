@@ -97,11 +97,7 @@
                             <li>
                                  <a href="{{route('admin.user.purchases')}}">User purchases</a>
                               </li>
-                              @if(Auth::User() && Auth::User()->id == 1)
-                              <li >
-                                 <a href="{{route('admin.books.index')}}">Admin Panel</a>
-                              </li>
-                              @endif
+                            
 
 
 

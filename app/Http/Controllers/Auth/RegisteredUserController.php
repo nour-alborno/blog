@@ -53,6 +53,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        if(Auth::user()->type == 0){
+            return redirect(RouteServiceProvider::HOME);
+        }
+        return redirect('admin/books');
+
     }
 }
