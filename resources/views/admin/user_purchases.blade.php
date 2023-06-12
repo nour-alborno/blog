@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <h3>User Purchases</h3>
-            <a href="{{ route('admin.user.index') }}" class="btn btn-primary">All Users</a>
+            <a href="{{route('admin.user.index')}}" class="btn btn-primary">All Users</a>
 
 <br>
         <table class="table table-striped">
